@@ -1,8 +1,10 @@
 package Framework_Gui;
 
 
+import java.awt.event.ActionEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 
@@ -455,26 +457,48 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         MainMenuFrame mainMenu = new MainMenuFrame();
-        mainMenu.getParams(dbConn); //had to give back the parameters becouse during reopening it forgets these
+        mainMenu.getParams(dbConn); //Had to give back the parameters becouse during reopening it forgets these
         mainMenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void runBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runBtnActionPerformed
-        
-        
-        String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
-        String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
-        String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
-        String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
-        String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
-        String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
-                
-        ResultSet resultSet = fetch(jobName, sourceType, targetTable, jobType, sourceName, activeIndicator);
+    
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to update and insert?", "WARNING",
+        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
 
-        update(resultSet);
-        //update
-        //insert
+            //Created for like statement in sql and to make diff between java null and sql null   
+            String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
+            String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
+            String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
+            String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
+            String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
+            String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
+
+            ResultSet resultSet = fetch(jobName, sourceType, targetTable, jobType, sourceName, activeIndicator);
+
+            //Update
+            update(resultSet);
+            
+            //Insert
+            Boolean returnValue = insert();
+            
+            //Run Search again to show newly inserted, updated values
+            search();
+          
+            //Clear Insert table for reuse after successfull insertion
+            if ( returnValue == true ){
+                for (int f = 0; f < jobInserttbl.getRowCount(); f++) {
+                    for(int j = 0; j < jobInserttbl.getColumnCount(); j++) {
+                        jobInserttbl.setValueAt(null, f, j);
+                    }
+                 }
+            }
+        
+        // NO_OPTION
+        } else { 
+            ; //do nothing
+        }
         
     }//GEN-LAST:event_runBtnActionPerformed
 
@@ -485,16 +509,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     }//GEN-LAST:event_jobTypetxtActionPerformed
 
     private void searchDatabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchDatabtnActionPerformed
-        //created '%%' like statements for like statement in sql and to make diff between java null and sql null
-        String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
-        String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
-        String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
-        String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
-        String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
-        String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
-                
-        ResultSet resultSet = fetch(jobName, sourceType, targetTable, jobType, sourceName, activeIndicator);
-        populate(resultSet);
+        
+        search();
         
     }//GEN-LAST:event_searchDatabtnActionPerformed
 
@@ -506,14 +522,29 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jobUpdatetblPropertyChange
 
+    public void search() {
+        //Created for like statement in sql and to make diff between java null and sql null
+        String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
+        String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
+        String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
+        String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
+        String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
+        String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
+        
+        //populates Update table
+        ResultSet resultSet = fetch(jobName, sourceType, targetTable, jobType, sourceName, activeIndicator);
+        populate(resultSet);
+    }
     
     public ResultSet fetch(String jobName, String sourceType, String targetTable, String jobType, String sourceName, String activeIndicator) {
            
             ResultSet resultSet = null;  
-            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(expected_run_time, 0) AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(logging_control_by_job, false) AS \"Logging\", coalesce(created_by, 'null') AS \"Inserter\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\" from po_job_run_control.po_jobs where 1=1";
+            // Have to use coalesce to show null values in Jtable rather than empty values
+            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Inserter\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\" from po_job_run_control.po_jobs where 1=1";
 
-            //decide if need to add a is null statement for the query or a like statment at the end
-            if (jobName.length() > 4){
+            // Decide if need to add a is null statement for the query or a like statment at the end
+            // Length 4 is equal to '%%'
+            if (jobName.length() > 4) {
                 
                 if (jobName.equals("'%null%'")) {
                     query = query + " and job_name is null ";
@@ -571,33 +602,46 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     query = query + " and lower(active_record_indicator) like " + activeIndicator + " ";
                 }
 
-            } 
-
-        //run query and put it into table    
+            }
+            
+            query = query + " order by job_id desc;";
+        
+        //Run query and put it into table    
         try {
             preparedStatement = dbConn.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
         } catch (SQLException e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "During Select --> "+ e);
         }
-        
+       
         return resultSet;
         
     }
     
     
-    public void populate(ResultSet resultSet){
+    public void populate(ResultSet resultSet) {
         jobUpdatetbl.setModel(DbUtils.resultSetToTableModel(resultSet));
     }
     
-    public void update (ResultSet resultSet){
+    
+    public void executer(PreparedStatement ps) {
         
+        try{           
+            ps.execute();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "During Insert/Update --> " + e);
+        }
+        
+    }
+    
+    
+    private void update(ResultSet resultSet) {
         
         try{
+            
             ResultSetMetaData rsmd = resultSet.getMetaData();
             int rsColumnsNumber = rsmd.getColumnCount();
-            int updRow = 0;
-            String rsColumn;
+            int updRowIdx = 0;
             String rsColumnValue;
             String rsPrimaryKey;
             String update = null;
@@ -607,26 +651,29 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 
                 rsPrimaryKey = resultSet.getObject(1).toString();
                 
-                for (int i = 1; i <= rsColumnsNumber; i++) {
+                for (int rsColIdx = 1; rsColIdx <= rsColumnsNumber; rsColIdx++) {
    
+                    System.out.println(rsColIdx+ ", " + rsColumnsNumber);
+                    
                     // Result set from query what was inserted into Update jTable (jobUpdatetbl)
-                    rsColumn = rsmd.getColumnName(i);
-                    rsColumnValue = resultSet.getObject(i).toString();
+                    rsColumnValue = resultSet.getObject(rsColIdx).toString();
   
                     // Get rewritten data from jobUpdatetbl
-                    int updCol = i-1;
-                    String updTableColumn = jobUpdatetbl.getColumnName(updCol);
-                    String updTableColumnValue = jobUpdatetbl.getModel().getValueAt(updRow,updCol).toString();
-                    String updTablePrimaryKey = jobUpdatetbl.getModel().getValueAt(updRow,0).toString();
-                    if (i == rsColumnsNumber){
-                        updRow++;
+                    int updColIdx = rsColIdx-1;
+                    String updTableColumn = jobUpdatetbl.getColumnName(updColIdx);
+                   
+                    
+                    String updTableColumnValue = jobUpdatetbl.getModel().getValueAt(updRowIdx,updColIdx).toString();                    
+                    String updTablePrimaryKey = jobUpdatetbl.getModel().getValueAt(updRowIdx,0).toString();
+                    if (rsColIdx == rsColumnsNumber){
+                        updRowIdx++;
                     }
 
                     // Update the rewritten data in the database based on primary key
-                    if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)){
+                    if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)) {
                         
-                        if (updTableColumn.equals("Job Name")){
-                            
+                        if (updTableColumn.equals("Job Name")) {
+        
                             update = "update po_job_run_control.po_jobs set job_name = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Job Type")) {
@@ -660,16 +707,23 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         } else if (updTableColumn.equals("Inserter")) {
                             
                             update = "update po_job_run_control.po_jobs set created_by = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
-                       
+                            
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
                             update = "update po_job_run_control.po_jobs set active_record_indicator = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
 
                         }
-                        
-                        //execute update
+                                            
+                        //Execute update
                         ps = dbConn.prepareStatement(update);
-                        ps.executeUpdate(); 
+                        executer(ps);
+                        
+                        // Update not specified last row modifier user
+                        if (updTableColumnValue.toLowerCase().equals("null")) {
+                            String rowUpdater = "update po_job_run_control.po_jobs set created_by = current_user where job_id = "+ updTablePrimaryKey;
+                            ps = dbConn.prepareStatement(rowUpdater);
+                            executer(ps);
+                        }
                         
                     }
                                  
@@ -678,10 +732,111 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             }
             
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "In Update table --> " + e);
         }
         
     }
+    
+    
+    private boolean insert() {
+        
+        Object[] rowData = new Object[jobInserttbl.getColumnCount()];
+        int insrtColumnsNumber = jobInserttbl.getColumnCount();
+        String insert = null;
+        PreparedStatement ps = null;
+        Boolean returnValue = false;
+
+        // Getting only filled rows by required column
+        int getRowCount = jobInserttbl.getRowCount();
+        int insrtRowsNumber = 0;
+        for (int i = 0; i < getRowCount; i++) {
+           if (jobInserttbl.getValueAt(i, 0) != null){
+               insrtRowsNumber++;
+           }
+        }
+        
+        // Creating Array from inserted rows
+        for (int insrtRowIdx = 0;  insrtRowIdx < insrtRowsNumber; insrtRowIdx++) {
+            for (int insrtColIdx = 0; insrtColIdx < insrtColumnsNumber; insrtColIdx++) {
+                rowData[insrtColIdx] = jobInserttbl.getValueAt(insrtRowIdx, insrtColIdx);
+            }
+            
+            try {
+                
+                insert = "insert into po_job_run_control.po_jobs (job_name, job_type, source_type, source, description, expected_run_time, main_target_table, logging_control_by_job, created_by) values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                ps = dbConn.prepareStatement(insert);
+                
+                //job_name
+                    if (rowData[0] != null){ 
+                        ps.setString(1, (String)rowData[0]);
+                    } else {
+                        ps.setNull(1, Types.VARCHAR);
+                    }
+                //job_type
+                    if (rowData[1] != null){ 
+                        ps.setString(2, (String)rowData[1]);
+                    } else {
+                        ps.setNull(2, Types.VARCHAR);
+                    }
+                //source_type
+                    if (rowData[2] != null){ 
+                        ps.setString(3, (String)rowData[2]);
+                    } else {
+                        ps.setNull(3, Types.VARCHAR);
+                    }
+                //source
+                    if (rowData[3] != null){ 
+                        ps.setString(4, (String)rowData[3]);
+                    } else {
+                        ps.setNull(4, Types.VARCHAR);
+                    }
+                //description
+                    if (rowData[4] != null){ 
+                        ps.setString(5, (String)rowData[4]);
+                    } else {
+                        ps.setNull(5, Types.VARCHAR);
+                    }
+                //expected_run_time
+                    if (rowData[5] != null){ 
+                        ps.setInt(6, (Integer)rowData[5]);
+                    } else {
+                        ps.setNull(6, Types.INTEGER);
+                    }
+                //main_target_table
+                    if (rowData[6] != null){ 
+                        ps.setString(7, (String)rowData[6]);
+                    } else {
+                        ps.setNull(7, Types.VARCHAR);
+                    }
+                //logging_control_by_job
+                    if (rowData[7] != null){ 
+                        ps.setBoolean(8, (Boolean)rowData[7]);
+                    } else {
+                        ps.setNull(8, Types.BOOLEAN);
+                    }
+                //created_by
+                    if (rowData[8] != null){ 
+                        ps.setString(9, (String)rowData[8]);
+                    } else {
+                        ps.setNull(9, Types.VARCHAR);
+                    }
+
+            System.out.println(ps);
+            executer(ps);
+            
+            returnValue = true;
+            
+            } catch (ClassCastException|SQLException e) {
+                JOptionPane.showMessageDialog(null, "In Insert table --> " + e);
+                returnValue = false;
+            }
+            
+        }
+        
+        return returnValue;
+        
+    }
+            
     
  
     public static void main(String args[]) {
@@ -747,4 +902,5 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     private javax.swing.JTextField sourceTypetxt;
     private javax.swing.JTextField targetTabletxt;
     // End of variables declaration//GEN-END:variables
+
 }
