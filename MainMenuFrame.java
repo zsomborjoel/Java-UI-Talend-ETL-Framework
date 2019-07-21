@@ -1,5 +1,6 @@
 package Framework_Gui;
 
+import java.awt.event.ActionEvent;
 import java.sql.*;
 
 
@@ -11,11 +12,17 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }
 
     Connection dbConn;
+    String env;
     
-    public void getParams(Connection dbConn){
+    public void getParams(Connection dbConn, String env){
         this.dbConn = dbConn;
+        this.env = env;
+        renameEnv(env);
     }
-    
+   
+    private void renameEnv(String env) {
+        envCopylbl.setText("Env.: " + env); 
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,7 +161,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
     private void jobsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobsBtnActionPerformed
         JobsFrameTbl jobs = new JobsFrameTbl();
-        jobs.getParams(dbConn);
+        jobs.getParams(dbConn, env);
         ResultSet resultSet = jobs.fetch("", "", "", "", "", "");
         jobs.populate(resultSet);
         jobs.setVisible(true);    

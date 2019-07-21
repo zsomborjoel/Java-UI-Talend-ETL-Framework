@@ -15,13 +15,14 @@ public class DbLogInFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    //get data from config file
+    //Get data from config file
     public static String getConfig(String env) {
         String url = null;
         try (FileReader reader = new FileReader ("conf/config.properties")) {
             Properties properties = new Properties();
             properties.load(reader);
             
+            //Decide which environment to use
             if (env.equals("PreProd")) {
                 url = properties.getProperty("preprod");
             } else if (env.equals("Prod")) {
@@ -33,7 +34,7 @@ public class DbLogInFrame extends javax.swing.JFrame {
             }
             
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Config file related --> "+ e);
         }
         
         return url;
@@ -77,18 +78,8 @@ public class DbLogInFrame extends javax.swing.JFrame {
 
         dbEnvcbx.setEditable(true);
         dbEnvcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dev", "PreProd", "Prod" }));
-        dbEnvcbx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dbEnvcbxActionPerformed(evt);
-            }
-        });
 
         userNametxt.setText("postgres");
-        userNametxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNametxtActionPerformed(evt);
-            }
-        });
 
         Pass.setText("Password:");
 
@@ -97,12 +88,6 @@ public class DbLogInFrame extends javax.swing.JFrame {
         Env.setText("Environment:");
 
         Login.setText("Log In");
-
-        passPw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passPwActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,27 +155,17 @@ public class DbLogInFrame extends javax.swing.JFrame {
         try {
             Connection conn = dbConn.getConnection(suburl, username, password);     
             MainMenuFrame mainMenu = new MainMenuFrame();
-            mainMenu.getParams(conn);
+            mainMenu.getParams(conn, env);
             mainMenu.setVisible(true);
             dispose();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "During login --> "+ e);
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
-
-    private void dbEnvcbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbEnvcbxActionPerformed
-    }//GEN-LAST:event_dbEnvcbxActionPerformed
-
-    private void passPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passPwActionPerformed
-    }//GEN-LAST:event_passPwActionPerformed
-
-    private void userNametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNametxtActionPerformed
-
-    }//GEN-LAST:event_userNametxtActionPerformed
 
     /**
      * @param args the command line arguments

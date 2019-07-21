@@ -120,9 +120,6 @@
           </StringArray>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dbEnvcbxActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -131,9 +128,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="postgres"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userNametxtActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Pass">
       <Properties>
@@ -156,9 +150,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passPw">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passPwActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

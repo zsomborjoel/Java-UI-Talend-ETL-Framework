@@ -1,17 +1,15 @@
 package Framework_Gui;
 
 
-import java.awt.event.ActionEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 
 
 public class JobsFrameTbl extends javax.swing.JFrame {
 
-     //Creates new form JobsFrameTbl
+    //Creates new form JobsFrameTbl
     public JobsFrameTbl() {
         initComponents();
     }
@@ -19,9 +17,16 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     Connection dbConn;
     ResultSet resultSet;
     PreparedStatement preparedStatement;
+    String env;
     
-    public void getParams(Connection dbConn){
-        this.dbConn = dbConn; 
+    public void getParams(Connection dbConn, String env){
+        this.dbConn = dbConn;
+        this.env = env;
+        renameEnv(env);
+    }
+   
+    private void renameEnv(String env) {
+        envCopylbl.setText("Env.: " + env); 
     }
 
 
@@ -62,116 +67,116 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jobUpdatetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, "", "", "", null, "", "", "", ""},
-                {null, null, null, null, null, null, null, null, null, "", null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, "", "", "", null, "", "", "", "", null},
+                {null, null, null, null, null, null, null, null, null, "", null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Job Id", "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Inserter", "Active Indicator"
+                "Job Id", "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Creator", "Active Indicator", "Creation Time"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true, true
+                false, true, true, true, true, true, true, true, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -183,16 +188,6 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             }
         });
         jobUpdatetbl.getTableHeader().setReorderingAllowed(false);
-        jobUpdatetbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jobUpdatetblMouseExited(evt);
-            }
-        });
-        jobUpdatetbl.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jobUpdatetblPropertyChange(evt);
-            }
-        });
         jScrollPane1.setViewportView(jobUpdatetbl);
 
         envCopylbl.setText("Env.:");
@@ -208,12 +203,6 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         runBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 runBtnActionPerformed(evt);
-            }
-        });
-
-        jobNametxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobNametxtActionPerformed(evt);
             }
         });
 
@@ -329,7 +318,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Inserter"
+                "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Creator"
             }
         ));
         jobInserttbl.getTableHeader().setReorderingAllowed(false);
@@ -344,13 +333,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jLabel7.setText("Job Type:");
 
-        jobTypetxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobTypetxtActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Source:");
+        jLabel8.setText("Source Name:");
 
         jLabel9.setText("Active Indicator:");
 
@@ -410,7 +393,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                                         .addComponent(targetTabletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 18, Short.MAX_VALUE)))
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -457,7 +440,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         MainMenuFrame mainMenu = new MainMenuFrame();
-        mainMenu.getParams(dbConn); //Had to give back the parameters becouse during reopening it forgets these
+        mainMenu.getParams(dbConn, env); //Had to give back the parameters becouse during reopening it forgets these
         mainMenu.setVisible(true);
         dispose();
     }//GEN-LAST:event_backBtnActionPerformed
@@ -502,25 +485,11 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         
     }//GEN-LAST:event_runBtnActionPerformed
 
-    private void jobNametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobNametxtActionPerformed
-    }//GEN-LAST:event_jobNametxtActionPerformed
-
-    private void jobTypetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobTypetxtActionPerformed
-    }//GEN-LAST:event_jobTypetxtActionPerformed
-
     private void searchDatabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchDatabtnActionPerformed
         
         search();
         
     }//GEN-LAST:event_searchDatabtnActionPerformed
-
-    private void jobUpdatetblMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobUpdatetblMouseExited
-
-    }//GEN-LAST:event_jobUpdatetblMouseExited
-
-    private void jobUpdatetblPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jobUpdatetblPropertyChange
-
-    }//GEN-LAST:event_jobUpdatetblPropertyChange
 
     public void search() {
         //Created for like statement in sql and to make diff between java null and sql null
@@ -540,7 +509,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
            
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Inserter\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\" from po_job_run_control.po_jobs where 1=1";
+            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
 
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
@@ -674,56 +643,49 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         
                         if (updTableColumn.equals("Job Name")) {
         
-                            update = "update po_job_run_control.po_jobs set job_name = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set job_name = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Job Type")) {
                             
-                            update = "update po_job_run_control.po_jobs set job_type = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set job_type = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Source Type")) {
                             
-                            update = "update po_job_run_control.po_jobs set source_type = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set source_type = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Source Name")) {
                             
-                            update = "update po_job_run_control.po_jobs set source = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set source = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                        
                         } else if (updTableColumn.equals("Description")) {
                             
-                            update = "update po_job_run_control.po_jobs set description = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set description = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Runtime")) {
                             
-                            update = "update po_job_run_control.po_jobs set expected_run_time = "+ updTableColumnValue + " where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set expected_run_time = "+ updTableColumnValue +", created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Target Table")) {
                             
-                            update = "update po_job_run_control.po_jobs set main_target_table = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set main_target_table = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Logging")) {
                             
-                            update = "update po_job_run_control.po_jobs set logging_control_by_job = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set logging_control_by_job = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Inserter")) {
-                            
-                            update = "update po_job_run_control.po_jobs set created_by = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                             
+                            update = "update po_job_run_control.po_jobs set created_by = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                             
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
-                            update = "update po_job_run_control.po_jobs set active_record_indicator = '"+ updTableColumnValue + "' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set active_record_indicator = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user) where job_id = "+ updTablePrimaryKey;
 
-                        }
+                        } 
                                             
                         //Execute update
                         ps = dbConn.prepareStatement(update);
-                        executer(ps);
-                        
-                        // Update not specified last row modifier user
-                        if (updTableColumnValue.toLowerCase().equals("null")) {
-                            String rowUpdater = "update po_job_run_control.po_jobs set created_by = current_user where job_id = "+ updTablePrimaryKey;
-                            ps = dbConn.prepareStatement(rowUpdater);
-                            executer(ps);
-                        }
+                        executer(ps);                        
                         
                     }
                                  
