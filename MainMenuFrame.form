@@ -122,11 +122,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Instance Contexts"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="instConBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="instDepBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Instance Dependency"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="instDepBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="priorityHierarchyBtn">
       <Properties>

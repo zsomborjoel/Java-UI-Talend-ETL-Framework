@@ -597,7 +597,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
             }
             
-            query = query + " order by job_id desc;";
+            query = query + " order by job_id desc limit 100;";
         
         //Run query and put it into table    
         try {

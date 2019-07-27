@@ -531,14 +531,14 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         String[] searchValues = new String[6];
         
         //Created for like statement in sql and to make diff between java null and sql null
-        String jobName =            "'%" + priorityTxt.getText().toLowerCase()           + "%'";
-        String jobId =              "'%" + jobIdtxt.getText().toLowerCase()             + "%'";
+        String priority =           "  " + priorityTxt.getText().toLowerCase()          + "  ";
+        String jobId =              "  " + jobIdtxt.getText().toLowerCase()             + "  ";
         String messageType =        "'%" + messageTypetxt.getText().toLowerCase()       + "%'";
         String stageSchema =        "'%" + stageSchematxt.getText().toLowerCase()       + "%'";
         String jsonStageTbl =       "'%" + jsonStageTbltxt.getText().toLowerCase()      + "%'";
         String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
         
-        searchValues[0] = jobName;
+        searchValues[0] = priority;
         searchValues[1] = jobId;
         searchValues[2] = messageType;
         searchValues[3] = stageSchema;
@@ -557,22 +557,21 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         populate(resultSet);
     }
     
-    public ResultSet fetch(String priorityTxt, String jobId, String messageType, String stageSchema, String jsonStageTbl, String activeIndicator) {          
+    public ResultSet fetch(String priority, String jobId, String messageType, String stageSchema, String jsonStageTbl, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            //String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
             String query="select instance_id AS \"Instance Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(message_type, 'null') AS \"Message Type\", coalesce(stage_schema, 'null') AS \"Stage Schema\", coalesce(json_stage_table, 'null') AS \"Json Stage Table\", coalesce(cast(priority as varchar(20))) AS \"Priority\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_instances where 1=1";
 
             
             
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
-            if (priorityTxt.length() > 4) {
+            if (priority.length() > 4) {
                 
-                if (priorityTxt.equals("'%null%'")) {
+                if (priority.equals("'%null%'")) {
                     query = query + " and priority is null ";
                 } else {
-                    query = query + " and priority = " + priorityTxt + " ";
+                    query = query + " and priority = " + priority + " ";
                 }
                 
             }  
@@ -627,7 +626,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
 
             }
             
-            query = query + " order by instance_id desc;";
+            query = query + " order by instance_id desc limit 100;";
         
         //Run query and put it into table    
         try {
@@ -690,31 +689,31 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
                         
                         if (updTableColumn.equals("Job Id")) {
         
-                            update = "update po_job_run_control.po_job_instances set job_id = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set job_id = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Message Type")) {
                             
-                            update = "update po_job_run_control.po_job_instances set message_type = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set message_type = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Stage Schema")) {
                             
-                            update = "update po_job_run_control.po_job_instances set stage_schema = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set stage_schema = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Json Stage Table")) {
                             
-                            update = "update po_job_run_control.po_job_instances set json_stage_table = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set json_stage_table = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                        
                         } else if (updTableColumn.equals("Priority")) {
                             
-                            update = "update po_job_run_control.po_job_instances set priority = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set priority = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Creator")) {
                              
-                            update = "update po_job_run_control.po_job_instances set created_by = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set created_by = '"+ updTableColumnValue +"' where instance_id = "+ updTablePrimaryKey;
                             
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
-                            update = "update po_job_run_control.po_job_instances set active_record_indicator = upper('"+ updTableColumnValue +"') where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set active_record_indicator = upper('"+ updTableColumnValue +"') where instance_id = "+ updTablePrimaryKey;
 
                         } 
                                             

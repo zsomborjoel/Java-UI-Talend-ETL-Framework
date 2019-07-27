@@ -61,8 +61,18 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         instConBtn.setText("Instance Contexts");
+        instConBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instConBtnActionPerformed(evt);
+            }
+        });
 
         instDepBtn.setText("Instance Dependency");
+        instDepBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instDepBtnActionPerformed(evt);
+            }
+        });
 
         priorityHierarchyBtn.setText("Priority Hierarchy");
 
@@ -178,6 +188,19 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jobs.setVisible(true);    
         dispose();
     }//GEN-LAST:event_jobsBtnActionPerformed
+
+    private void instConBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instConBtnActionPerformed
+        JobInstContextsFrameTbl contexts = new JobInstContextsFrameTbl();
+        contexts.getParams(dbConn, env);
+        ResultSet resultSet = contexts.fetch("", "", "", "", "");
+        contexts.populate(resultSet);
+        contexts.setVisible(true);    
+        dispose();
+    }//GEN-LAST:event_instConBtnActionPerformed
+
+    private void instDepBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instDepBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_instDepBtnActionPerformed
 
 
     public static void main(String args[]) {
