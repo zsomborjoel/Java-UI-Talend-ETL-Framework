@@ -63,8 +63,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jobUpdatetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, "", "", "", null, "", "", "", "", null},
-                {null, null, null, null, null, null, null, null, null, "", null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null},
@@ -208,11 +208,12 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jLabel3.setText("Target Table:");
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Jobs");
 
         jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, "", null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -356,10 +357,9 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(envCopylbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -398,9 +398,10 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 10, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(envCopylbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -429,12 +430,12 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     .addComponent(searchDatabtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
@@ -532,7 +533,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     public ResultSet fetch(String jobName, String sourceType, String targetTable, String jobType, String sourceName, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
+            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
 
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
@@ -579,9 +580,9 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             if (sourceName.length() > 4) {
                 
                 if (sourceName.equals("'%null%'")) {
-                    query = query + " and source is null ";
+                    query = query + " and source_name is null ";
                 } else {
-                    query = query + " and lower(source) like " + sourceName + " ";
+                    query = query + " and lower(source_name) like " + sourceName + " ";
                 }
 
             } 
@@ -671,7 +672,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         
                         } else if (updTableColumn.equals("Source Name")) {
                             
-                            update = "update po_job_run_control.po_jobs set source = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set source_name = '"+ updTableColumnValue +"', created_by = coalesce(created_by,current_user), creation_time = now() where job_id = "+ updTablePrimaryKey;
                        
                         } else if (updTableColumn.equals("Description")) {
                             
@@ -737,7 +738,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             
             try {
                 
-                insert = "insert into po_job_run_control.po_jobs (job_name, job_type, source_type, source, description, expected_run_time, main_target_table, logging_control_by_job, created_by) values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                insert = "insert into po_job_run_control.po_jobs (job_name, job_type, source_type, source_name, description, expected_run_time, main_target_table, logging_control_by_job, created_by) values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 ps = dbConn.prepareStatement(insert);
                 
                 //job_name
