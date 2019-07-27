@@ -2,15 +2,16 @@ package Framework_Gui;
 
 
 import java.sql.*;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
 
 
-public class JobsFrameTbl extends javax.swing.JFrame {
+public class JobInstancesFrameTbl extends javax.swing.JFrame {
 
     //Creates new form JobsFrameTbl
-    public JobsFrameTbl() {
+    public JobInstancesFrameTbl() {
         initComponents();
     }
     
@@ -39,9 +40,9 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         envCopylbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         runBtn = new javax.swing.JButton();
-        jobNametxt = new javax.swing.JTextField();
-        sourceTypetxt = new javax.swing.JTextField();
-        targetTabletxt = new javax.swing.JTextField();
+        priorityTxt = new javax.swing.JTextField();
+        messageTypetxt = new javax.swing.JTextField();
+        jsonStageTbltxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,8 +52,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jobTypetxt = new javax.swing.JTextField();
-        sourceNametxt = new javax.swing.JTextField();
+        jobIdtxt = new javax.swing.JTextField();
+        stageSchematxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         activeIndicatortxt = new javax.swing.JTextField();
@@ -63,157 +64,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jobUpdatetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Job Id", "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Creator", "Active Indicator", "Creation Time"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jobUpdatetbl.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jobUpdatetbl);
-
-        envCopylbl.setText("Env.:");
-
-        backBtn.setText("Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
-        runBtn.setText("Run");
-        runBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                runBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Job Name:");
-
-        jLabel2.setText("Source Type:");
-
-        jLabel3.setText("Target Table:");
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Jobs");
-
-        jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, "", null, null},
+                {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -315,24 +166,189 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Job Name", "Job Type", "Source Type", "Source Name", "Description", "Runtime", "Target Table", "Logging", "Creator"
+                "Instance Id", "Job Id", "Message Type", "Stage Schema", "Json Stage Table", "Priority", "Creator", "Active Indicator", "Creation Time"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jobUpdatetbl.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jobUpdatetbl);
+
+        envCopylbl.setText("Env.:");
+
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        runBtn.setText("Run");
+        runBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runBtnActionPerformed(evt);
+            }
+        });
+
+        priorityTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priorityTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Priority:");
+
+        jLabel2.setText("Message Type:");
+
+        jLabel3.setText("Json Stage Table:");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Job Instances");
+
+        jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Job Id", "Message Type", "Stage Schema", "Json Stage Table", "Priority", "Creator"
             }
         ));
         jobInserttbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jobInserttbl);
-        if (jobInserttbl.getColumnModel().getColumnCount() > 0) {
-            jobInserttbl.getColumnModel().getColumn(8).setResizable(false);
-        }
 
         jLabel5.setText("Insert");
 
         jLabel6.setText("Update");
 
-        jLabel7.setText("Job Type:");
+        jLabel7.setText("Job Id:");
 
-        jLabel8.setText("Source Name:");
+        stageSchematxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stageSchematxtActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Stage Schema:");
 
         jLabel9.setText("Active Indicator:");
+
+        activeIndicatortxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activeIndicatortxtActionPerformed(evt);
+            }
+        });
 
         searchDatabtn.setText("Search");
         searchDatabtn.addActionListener(new java.awt.event.ActionListener() {
@@ -375,29 +391,28 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jobTypetxt)
-                                    .addComponent(jobNametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                                    .addComponent(jobIdtxt)
+                                    .addComponent(priorityTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(sourceNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(messageTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(stageSchematxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(sourceTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(targetTabletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE))
+                                        .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jsonStageTbltxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 38, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -413,16 +428,16 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     .addComponent(envCopylbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jobNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sourceTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(targetTabletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priorityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(messageTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jsonStageTbltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jobTypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sourceNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jobIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stageSchematxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
@@ -500,22 +515,34 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_clearBtnActionPerformed
 
+    private void stageSchematxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stageSchematxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stageSchematxtActionPerformed
+
+    private void activeIndicatortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeIndicatortxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_activeIndicatortxtActionPerformed
+
+    private void priorityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_priorityTxtActionPerformed
+
     public String[] getSearchValues() {      
         String[] searchValues = new String[6];
         
         //Created for like statement in sql and to make diff between java null and sql null
-        String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
-        String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
-        String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
-        String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
-        String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
+        String jobName =            "'%" + priorityTxt.getText().toLowerCase()           + "%'";
+        String jobId =              "'%" + jobIdtxt.getText().toLowerCase()             + "%'";
+        String messageType =        "'%" + messageTypetxt.getText().toLowerCase()       + "%'";
+        String stageSchema =        "'%" + stageSchematxt.getText().toLowerCase()       + "%'";
+        String jsonStageTbl =       "'%" + jsonStageTbltxt.getText().toLowerCase()      + "%'";
         String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
         
         searchValues[0] = jobName;
-        searchValues[1] = sourceType;
-        searchValues[2] = targetTable;
-        searchValues[3] = jobType;
-        searchValues[4] = sourceName;
+        searchValues[1] = jobId;
+        searchValues[2] = messageType;
+        searchValues[3] = stageSchema;
+        searchValues[4] = jsonStageTbl;
         searchValues[5] = activeIndicator;
         
         return searchValues;
@@ -530,59 +557,62 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         populate(resultSet);
     }
     
-    public ResultSet fetch(String jobName, String sourceType, String targetTable, String jobType, String sourceName, String activeIndicator) {          
+    public ResultSet fetch(String priorityTxt, String jobId, String messageType, String stageSchema, String jsonStageTbl, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
+            //String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
+            String query="select instance_id AS \"Instance Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(message_type, 'null') AS \"Message Type\", coalesce(stage_schema, 'null') AS \"Stage Schema\", coalesce(json_stage_table, 'null') AS \"Json Stage Table\", coalesce(cast(priority as varchar(20))) AS \"Priority\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_instances where 1=1";
 
+            
+            
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
-            if (jobName.length() > 4) {
+            if (priorityTxt.length() > 4) {
                 
-                if (jobName.equals("'%null%'")) {
-                    query = query + " and job_name is null ";
+                if (priorityTxt.equals("'%null%'")) {
+                    query = query + " and priority is null ";
                 } else {
-                    query = query + " and lower(job_name) like " + jobName + " ";
+                    query = query + " and priority = " + priorityTxt + " ";
                 }
                 
             }  
             
-            if (sourceType.length() > 4) {
+            if (jobId.length() > 4) {
                 
-                if (sourceType.equals("'%null%'")) {
-                    query = query + " and source_type is null ";
+                if (jobId.equals("'%null%'")) {
+                    query = query + " and job_id is null ";
                 } else {
-                    query = query + " and lower(source_type) like " + sourceType + " ";
+                    query = query + " and job_id = " + jobId + " ";
                 }
 
             }
             
-            if (targetTable.length() > 4) {
+            if (messageType.length() > 4) {
                 
-                if (targetTable.equals("'%null%'")) {
-                    query = query + " and main_target_table is null ";
+                if (messageType.equals("'%null%'")) {
+                    query = query + " and message_type is null ";
                 } else {
-                    query = query + " and lower(main_target_table) like " + targetTable + " ";
+                    query = query + " and lower(message_type) like " + messageType + " ";
                 }
 
             } 
             
-            if (jobType.length() > 4) {
+            if (stageSchema.length() > 4) {
                 
-                if (jobType.equals("'%null%'")) {
-                    query = query + " and job_type is null ";
+                if (stageSchema.equals("'%null%'")) {
+                    query = query + " and stage_schema is null ";
                 } else {
-                    query = query + " and lower(job_type) like " + jobType + " ";
+                    query = query + " and lower(stage_schema) like " + stageSchema + " ";
                 }
 
             } 
              
-            if (sourceName.length() > 4) {
+            if (jsonStageTbl.length() > 4) {
                 
-                if (sourceName.equals("'%null%'")) {
-                    query = query + " and source_name is null ";
+                if (jsonStageTbl.equals("'%null%'")) {
+                    query = query + " and json_stage_table is null ";
                 } else {
-                    query = query + " and lower(source_name) like " + sourceName + " ";
+                    query = query + " and lower(json_stage_table) like " + jsonStageTbl + " ";
                 }
 
             } 
@@ -597,7 +627,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
             }
             
-            query = query + " order by job_id desc;";
+            query = query + " order by instance_id desc;";
         
         //Run query and put it into table    
         try {
@@ -658,45 +688,33 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     // Update the rewritten data in the database based on primary key
                     if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)) {
                         
-                        if (updTableColumn.equals("Job Name")) {
+                        if (updTableColumn.equals("Job Id")) {
         
-                            update = "update po_job_run_control.po_jobs set job_name = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set job_id = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Job Type")) {
+                        } else if (updTableColumn.equals("Message Type")) {
                             
-                            update = "update po_job_run_control.po_jobs set job_type = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set message_type = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Source Type")) {
+                        } else if (updTableColumn.equals("Stage Schema")) {
                             
-                            update = "update po_job_run_control.po_jobs set source_type = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set stage_schema = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Source Name")) {
+                        } else if (updTableColumn.equals("Json Stage Table")) {
                             
-                            update = "update po_job_run_control.po_jobs set source_name = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set json_stage_table = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                        
-                        } else if (updTableColumn.equals("Description")) {
+                        } else if (updTableColumn.equals("Priority")) {
                             
-                            update = "update po_job_run_control.po_jobs set description = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
-                        
-                        } else if (updTableColumn.equals("Runtime")) {
-                            
-                            update = "update po_job_run_control.po_jobs set expected_run_time = "+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
-                        
-                        } else if (updTableColumn.equals("Target Table")) {
-                            
-                            update = "update po_job_run_control.po_jobs set main_target_table = '"+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
-                        
-                        } else if (updTableColumn.equals("Logging")) {
-                            
-                            update = "update po_job_run_control.po_jobs set logging_control_by_job = '"+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set priority = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Creator")) {
                              
-                            update = "update po_job_run_control.po_jobs set created_by = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set created_by = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                             
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
-                            update = "update po_job_run_control.po_jobs set active_record_indicator = upper('"+ updTableColumnValue +"') where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_job_instances set active_record_indicator = upper('"+ updTableColumnValue +"') where job_id = "+ updTablePrimaryKey;
 
                         } 
                                             
@@ -734,67 +752,51 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         for (int insrtRowIdx = 0;  insrtRowIdx < insrtRowsNumber; insrtRowIdx++) {
             for (int insrtColIdx = 0; insrtColIdx < insrtColumnsNumber; insrtColIdx++) {
                 rowData[insrtColIdx] = jobInserttbl.getValueAt(insrtRowIdx, insrtColIdx);
+                System.out.println(Arrays.toString(rowData));
             }
             
             try {
                 
-                insert = "insert into po_job_run_control.po_jobs (job_name, job_type, source_type, source_name, description, expected_run_time, main_target_table, logging_control_by_job, created_by) values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                insert = "insert into po_job_run_control.po_job_instances (job_id, message_type, stage_schema, json_stage_table, priority, created_by) values(?, ?, ?, ?, ?, ?);";
                 ps = dbConn.prepareStatement(insert);
                 
-                //job_name
+                //job_id
                     if (rowData[0] != null){ 
-                        ps.setString(1, (String)rowData[0]);
+                        ps.setInt(1, Integer.parseInt((String)rowData[0]));
                     } else {
-                        ps.setNull(1, Types.VARCHAR);
+                        ps.setNull(1, Types.INTEGER);
                     }
-                //job_type
+                //message_type
                     if (rowData[1] != null){ 
                         ps.setString(2, (String)rowData[1]);
                     } else {
                         ps.setNull(2, Types.VARCHAR);
                     }
-                //source_type
+                //stage_schema
                     if (rowData[2] != null){ 
                         ps.setString(3, (String)rowData[2]);
                     } else {
                         ps.setNull(3, Types.VARCHAR);
                     }
-                //source
+                //json_stage_table
                     if (rowData[3] != null){ 
                         ps.setString(4, (String)rowData[3]);
                     } else {
                         ps.setNull(4, Types.VARCHAR);
                     }
-                //description
+                //priority
                     if (rowData[4] != null){ 
-                        ps.setString(5, (String)rowData[4]);
+                        ps.setInt(5, Integer.parseInt((String)rowData[4]));
                     } else {
-                        ps.setNull(5, Types.VARCHAR);
-                    }
-                //expected_run_time
-                    if (rowData[5] != null){ 
-                        ps.setInt(6, Integer.parseInt((String)rowData[5]));
-                    } else {
-                        ps.setNull(6, Types.INTEGER);
-                    }
-                //main_target_table
-                    if (rowData[6] != null){ 
-                        ps.setString(7, (String)rowData[6]);
-                    } else {
-                        ps.setNull(7, Types.VARCHAR);
-                    }
-                //logging_control_by_job
-                    if (rowData[7] != null){ 
-                        ps.setBoolean(8, (Boolean)rowData[7]);
-                    } else {
-                        ps.setNull(8, Types.BOOLEAN);
+                        ps.setNull(5, Types.SMALLINT);
                     }
                 //created_by
-                    if (rowData[8] != null){ 
-                        ps.setString(9, (String)rowData[8]);
+                    if (rowData[5] != null){ 
+                        ps.setString(6, (String)rowData[5]);
                     } else {
-                        ps.setNull(9, Types.VARCHAR);
+                        ps.setNull(6, Types.VARCHAR);
                     }
+              
 
             executer(ps);
             
@@ -816,20 +818,20 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JobInstancesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JobInstancesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JobInstancesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JobInstancesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JobsFrameTbl().setVisible(true);
+                new JobInstancesFrameTbl().setVisible(true);
             }
         });
         
@@ -851,15 +853,15 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jobIdtxt;
     private javax.swing.JTable jobInserttbl;
-    private javax.swing.JTextField jobNametxt;
-    private javax.swing.JTextField jobTypetxt;
     private javax.swing.JTable jobUpdatetbl;
+    private javax.swing.JTextField jsonStageTbltxt;
+    private javax.swing.JTextField messageTypetxt;
+    private javax.swing.JTextField priorityTxt;
     private javax.swing.JButton runBtn;
     private javax.swing.JButton searchDatabtn;
-    private javax.swing.JTextField sourceNametxt;
-    private javax.swing.JTextField sourceTypetxt;
-    private javax.swing.JTextField targetTabletxt;
+    private javax.swing.JTextField stageSchematxt;
     // End of variables declaration//GEN-END:variables
 
 }

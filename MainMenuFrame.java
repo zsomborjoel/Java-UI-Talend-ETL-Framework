@@ -143,9 +143,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addComponent(instConOverBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(instNotBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(backBtn)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,7 +158,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void instancesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instancesBtnActionPerformed
-        // none
+        JobInstancesFrameTbl instances = new JobInstancesFrameTbl();
+        instances.getParams(dbConn, env);
+        ResultSet resultSet = instances.fetch("", "", "", "", "", "");
+        instances.populate(resultSet);
+        instances.setVisible(true);    
+        dispose();
     }//GEN-LAST:event_instancesBtnActionPerformed
 
     private void instNotBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instNotBtnActionPerformed
