@@ -39,12 +39,14 @@ public class MainMenuFrame extends javax.swing.JFrame {
         instancesBtn = new javax.swing.JButton();
         instConBtn = new javax.swing.JButton();
         instDepBtn = new javax.swing.JButton();
-        priorityhierarchyBtn = new javax.swing.JButton();
-        runcontrolBtn = new javax.swing.JButton();
+        priorityHierarchyBtn = new javax.swing.JButton();
+        runControlBtn = new javax.swing.JButton();
         instNotBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
         envCopylbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        instConOverBtn = new javax.swing.JButton();
+        notifTypesBtn = new javax.swing.JButton();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -68,9 +70,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         instDepBtn.setText("Instance Dependency");
 
-        priorityhierarchyBtn.setText("Priority Hierarchy");
+        priorityHierarchyBtn.setText("Priority Hierarchy");
 
-        runcontrolBtn.setText("Run Control");
+        runControlBtn.setText("Run Control");
 
         instNotBtn.setText("Instance Notifications");
         instNotBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +92,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Main Menu");
 
+        instConOverBtn.setText("Instance Contexts Override");
+
+        notifTypesBtn.setText("Notification Types");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,23 +103,25 @@ public class MainMenuFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jobsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instancesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instDepBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priorityhierarchyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(runcontrolBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instNotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(envCopylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(131, 131, 131)
-                                .addComponent(jLabel2)))))
+                                .addComponent(jLabel2))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jobsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(instancesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(instConBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(instDepBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(priorityHierarchyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(runControlBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(instNotBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(instConOverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(notifTypesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -123,23 +131,27 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(envCopylbl)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jobsBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(priorityhierarchyBtn)
+                .addComponent(priorityHierarchyBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(runcontrolBtn)
+                .addComponent(runControlBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(notifTypesBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(instancesBtn)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(instDepBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(instConBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(instConOverBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(instNotBtn)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backBtn)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -214,6 +226,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel envCopylbl;
     private javax.swing.JButton instConBtn;
+    private javax.swing.JButton instConOverBtn;
     private javax.swing.JButton instDepBtn;
     private javax.swing.JButton instNotBtn;
     private javax.swing.JButton instancesBtn;
@@ -221,7 +234,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jobsBtn;
-    private javax.swing.JButton priorityhierarchyBtn;
-    private javax.swing.JButton runcontrolBtn;
+    private javax.swing.JButton notifTypesBtn;
+    private javax.swing.JButton priorityHierarchyBtn;
+    private javax.swing.JButton runControlBtn;
     // End of variables declaration//GEN-END:variables
 }

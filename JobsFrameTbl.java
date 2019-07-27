@@ -62,6 +62,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         activeIndicatortxt = new javax.swing.JTextField();
         searchDatabtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -344,6 +345,13 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             }
         });
 
+        clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -354,15 +362,16 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(158, 158, 158))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -393,7 +402,10 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                                         .addComponent(targetTabletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE)))
+                        .addGap(0, 10, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -431,7 +443,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
-                    .addComponent(runBtn))
+                    .addComponent(runBtn)
+                    .addComponent(clearBtn))
                 .addContainerGap())
         );
 
@@ -464,20 +477,11 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             update(resultSet);
             
             //Insert
-            Boolean returnValue = insert();
+            insert();
             
             //Run Search again to show newly inserted, updated values
             search();
           
-            //Clear Insert table for reuse after successfull insertion
-            if ( returnValue == true ){
-                for (int f = 0; f < jobInserttbl.getRowCount(); f++) {
-                    for(int j = 0; j < jobInserttbl.getColumnCount(); j++) {
-                        jobInserttbl.setValueAt(null, f, j);
-                    }
-                 }
-            }
-        
         // NO_OPTION
         } else { 
             ; //do nothing
@@ -490,6 +494,23 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         search();
         
     }//GEN-LAST:event_searchDatabtnActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        //Clear Insert table for reuse after successfull insertion
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to clear the Insert table?", "WARNING",
+        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            
+            for (int f = 0; f < jobInserttbl.getRowCount(); f++) {
+                for(int j = 0; j < jobInserttbl.getColumnCount(); j++) {
+                    jobInserttbl.setValueAt(null, f, j);
+                }
+            }
+            
+        // NO_OPTION
+        } else { 
+            ; //do nothing
+        }
+    }//GEN-LAST:event_clearBtnActionPerformed
 
     public void search() {
         //Created for like statement in sql and to make diff between java null and sql null
@@ -621,9 +642,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 rsPrimaryKey = resultSet.getObject(1).toString();
                 
                 for (int rsColIdx = 1; rsColIdx <= rsColumnsNumber; rsColIdx++) {
-   
-                    System.out.println(rsColIdx+ ", " + rsColumnsNumber);
-                    
+                       
                     // Result set from query what was inserted into Update jTable (jobUpdatetbl)
                     rsColumnValue = resultSet.getObject(rsColIdx).toString();
   
@@ -700,7 +719,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     }
     
     
-    private boolean insert() {
+    private void insert() {
         
         Object[] rowData = new Object[jobInserttbl.getColumnCount()];
         int insrtColumnsNumber = jobInserttbl.getColumnCount();
@@ -783,19 +802,16 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         ps.setNull(9, Types.VARCHAR);
                     }
 
-            System.out.println(ps);
             executer(ps);
             
-            returnValue = true;
+           
             
             } catch (ClassCastException|SQLException e) {
                 JOptionPane.showMessageDialog(null, "In Insert table --> " + e);
-                returnValue = false;
-            }
+            } 
             
         }
         
-        return returnValue;
         
     }
             
@@ -842,6 +858,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField activeIndicatortxt;
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton clearBtn;
     private javax.swing.JLabel envCopylbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
