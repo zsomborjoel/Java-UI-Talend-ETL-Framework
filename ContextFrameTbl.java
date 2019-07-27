@@ -7,10 +7,10 @@ import net.proteanit.sql.DbUtils;
 
 
 
-public class JobsFrameTbl extends javax.swing.JFrame {
+public class ContextFrameTbl extends javax.swing.JFrame {
 
     //Creates new form JobsFrameTbl
-    public JobsFrameTbl() {
+    public ContextFrameTbl() {
         initComponents();
     }
     
@@ -815,20 +815,20 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContextFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContextFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContextFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JobsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContextFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JobsFrameTbl().setVisible(true);
+                new ContextFrameTbl().setVisible(true);
             }
         });
         

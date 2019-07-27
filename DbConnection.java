@@ -1,6 +1,5 @@
 package Framework_Gui;
 
-
 import java.sql.*;
 
 public class DbConnection {
