@@ -109,6 +109,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
         instConOverBtn.setText("Instance Contexts Override");
 
         notifTypesBtn.setText("Notification Types");
+        notifTypesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notifTypesBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,6 +234,15 @@ public class MainMenuFrame extends javax.swing.JFrame {
         runControl.setVisible(true);    
         dispose();
     }//GEN-LAST:event_runControlBtnActionPerformed
+
+    private void notifTypesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notifTypesBtnActionPerformed
+        NotifTypesFrameTbl notifTypes = new NotifTypesFrameTbl();
+        notifTypes.getParams(dbConn, env);
+        ResultSet resultSet = notifTypes.fetch("", "", "");
+        notifTypes.populate(resultSet);
+        notifTypes.setVisible(true);    
+        dispose();
+    }//GEN-LAST:event_notifTypesBtnActionPerformed
 
 
     public static void main(String args[]) {

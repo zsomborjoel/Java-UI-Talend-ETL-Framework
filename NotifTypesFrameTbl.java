@@ -8,10 +8,10 @@ import net.proteanit.sql.DbUtils;
 
 
 
-public class JobInstContextsFrameTbl extends javax.swing.JFrame {
+public class NotifTypesFrameTbl extends javax.swing.JFrame {
 
     //Creates new form JobsFrameTbl
-    public JobInstContextsFrameTbl() {
+    public NotifTypesFrameTbl() {
         initComponents();
     }
     
@@ -40,10 +40,8 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         envCopylbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         runBtn = new javax.swing.JButton();
-        instanceIdtxt = new javax.swing.JTextField();
-        contextNametxt = new javax.swing.JTextField();
+        notifTypeCodeTxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jobInserttbl = new javax.swing.JTable();
@@ -51,8 +49,6 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jobIdtxt = new javax.swing.JTextField();
-        contextValuetxt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         activeIndicatortxt = new javax.swing.JTextField();
         searchDatabtn = new javax.swing.JButton();
@@ -61,166 +57,6 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jobUpdatetbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Context Id", "Job Id", "Instance Id", "Context Name", "Creator", "Active Indicator", "Creation Time"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jobUpdatetbl.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jobUpdatetbl);
-
-        envCopylbl.setText("Env.:");
-
-        backBtn.setText("Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
-        runBtn.setText("Run");
-        runBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                runBtnActionPerformed(evt);
-            }
-        });
-
-        instanceIdtxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                instanceIdtxtActionPerformed(evt);
-            }
-        });
-
-        contextNametxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contextNametxtActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Instance Id:");
-
-        jLabel2.setText("Context Name:");
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Instance Contexts");
-
-        jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -324,7 +160,159 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Job Id", "Instance Id", "Context Name", "Context Value", "Creator"
+                "Notification Type Code", "Notification Description", "Creator", "Active Indicator", "Creation Time"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jobUpdatetbl.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jobUpdatetbl);
+
+        envCopylbl.setText("Env.:");
+
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        runBtn.setText("Run");
+        runBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runBtnActionPerformed(evt);
+            }
+        });
+
+        notifTypeCodeTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                notifTypeCodeTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Notification Type Code");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Notification Types");
+
+        jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Notification Type Code", "Notification Description", "Creator"
             }
         ));
         jobInserttbl.getTableHeader().setReorderingAllowed(false);
@@ -334,15 +322,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
 
         jLabel6.setText("Update");
 
-        jLabel7.setText("Job Id:");
-
-        contextValuetxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contextValuetxtActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText("Context Value:");
+        jLabel7.setText("Notification Description:");
 
         jLabel9.setText("Active Indicator:");
 
@@ -379,12 +359,11 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(158, 158, 158))
+                                .addGap(671, 671, 671)
+                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -394,22 +373,14 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jobIdtxt)
-                                    .addComponent(instanceIdtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(notifTypeCodeTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contextNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(contextValuetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 12, Short.MAX_VALUE))
+                        .addGap(0, 196, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -425,17 +396,13 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                     .addComponent(envCopylbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(instanceIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contextNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(notifTypeCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jobIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contextValuetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
                     .addComponent(jLabel9)
                     .addComponent(searchDatabtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -472,7 +439,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             String[] searchValues = getSearchValues();
             
             //Fetch data
-            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4]);
+            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2]);
 
             //Update
             update(resultSet);
@@ -510,37 +477,25 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_clearBtnActionPerformed
 
-    private void contextValuetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contextValuetxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contextValuetxtActionPerformed
-
     private void activeIndicatortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeIndicatortxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_activeIndicatortxtActionPerformed
 
-    private void instanceIdtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instanceIdtxtActionPerformed
+    private void notifTypeCodeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notifTypeCodeTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_instanceIdtxtActionPerformed
-
-    private void contextNametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contextNametxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contextNametxtActionPerformed
+    }//GEN-LAST:event_notifTypeCodeTxtActionPerformed
 
     public String[] getSearchValues() {      
-        String[] searchValues = new String[5];
+        String[] searchValues = new String[3];
         
         //Created for like statement in sql and to make diff between java null and sql null
-        String instanceId =         "  " + instanceIdtxt.getText().toLowerCase()        + "  ";
-        String jobId =              "  " + jobIdtxt.getText().toLowerCase()             + "  ";
-        String contextName =        "'%" + contextNametxt.getText().toLowerCase()       + "%'";
-        String contextValue =       "'%" + contextValuetxt.getText().toLowerCase()      + "%'";
+        String notifTypeCode =      "'%" + notifTypeCodeTxt.getText().toLowerCase()     + "%'";
+        String notifDesc =          "'%" + jobIdtxt.getText().toLowerCase()         + "%'";
         String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
         
-        searchValues[0] = instanceId;
-        searchValues[1] = jobId;
-        searchValues[2] = contextName;
-        searchValues[3] = contextValue;
-        searchValues[4] = activeIndicator;
+        searchValues[0] = notifTypeCode;
+        searchValues[1] = notifDesc;
+        searchValues[2] = activeIndicator;
         
         return searchValues;
     }
@@ -550,59 +505,38 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         String[] searchValues = getSearchValues(); 
         
         //populates Update table
-        ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4]);
+        ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2]);
         populate(resultSet);
     }
     
-    public ResultSet fetch(String instanceId, String jobId, String contextName, String contextValue, String activeIndicator) {          
+    public ResultSet fetch(String notifTypeCode, String notifDesc, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select context_id AS \"Context Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(cast(instance_id as varchar(20)), 'null') AS \"Instance Id\",  coalesce(context_name, 'null') AS \"Context Name\", coalesce(context_value, 'null') AS \"Context Value\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_inst_contexts where 1=1";
-
-            
-            
+            String query="select coalesce(notification_type_code, 'null') AS \"Notification Type Code\", coalesce(notification_description, 'null') AS \"Notification Description\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_datetime as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_notification_types where 1=1";
+           
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
-            if (instanceId.length() > 4) {
+                        
+            if (notifTypeCode.length() > 4) {
                 
-                if (instanceId.equals("  null  ")) {
-                    query = query + " and instance_id is null ";
+                if (notifTypeCode.equals("'%null%'")) {
+                    query = query + " and notification_type_code is null ";
                 } else {
-                    query = query + " and instance_id = " + instanceId + " ";
+                    query = query + " and lower(notification_type_code) like " + notifTypeCode + " ";
                 }
                 
             }  
             
-            if (jobId.length() > 4) {
+            if (notifDesc.length() > 4) {
                 
-                if (jobId.equals("  null  ")) {
-                    query = query + " and job_id is null ";
+                if (notifDesc.equals("'%null%'")) {
+                    query = query + " and notification_description is null ";
                 } else {
-                    query = query + " and job_id = " + jobId + " ";
+                    query = query + " and lower(notification_description) like  " + notifDesc + " ";
                 }
 
             }
             
-            if (contextName.length() > 4) {
-                
-                if (contextName.equals("'%null%'")) {
-                    query = query + " and context_name is null ";
-                } else {
-                    query = query + " and lower(context_name) like " + contextName + " ";
-                }
-
-            } 
-            
-            if (contextValue.length() > 4) {
-                
-                if (contextValue.equals("'%null%'")) {
-                    query = query + " and context_value is null ";
-                } else {
-                    query = query + " and lower(context_value) like " + contextValue + " ";
-                }
-
-            } 
-             
             if (activeIndicator.length() > 4) {
                 
                 if (activeIndicator.equals("'%null%'")) {
@@ -613,7 +547,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
 
             }
             
-            query = query + " order by context_id desc limit 100;";
+            query = query + " order by creation_datetime desc limit 100;";
         
         //Run query and put it into table    
         try {
@@ -674,29 +608,17 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                     // Update the rewritten data in the database based on primary key
                     if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)) {
                         
-                        if (updTableColumn.equals("Job Id")) {
+                        if (updTableColumn.equals("Notification Description")) {
         
-                            update = "update po_job_run_control.po_job_inst_contexts set job_id = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_notification_types set notification_description = '"+ updTableColumnValue +"' where notification_type_code = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Instance Id")) {
-                            
-                            update = "update po_job_run_control.po_job_inst_contexts set instance_id = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
-                        
-                        } else if (updTableColumn.equals("Context Name")) {
-                            
-                            update = "update po_job_run_control.po_job_inst_contexts set context_name = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
-                        
-                        } else if (updTableColumn.equals("Context Value")) {
-                            
-                            update = "update po_job_run_control.po_job_inst_contexts set context_value = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
-                       
                         } else if (updTableColumn.equals("Creator")) {
                              
-                            update = "update po_job_run_control.po_job_inst_contexts set created_by = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_notification_types set created_by = '"+ updTableColumnValue +"' where notification_type_code = "+ updTablePrimaryKey;
                             
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
-                            update = "update po_job_run_control.po_job_inst_contexts set active_record_indicator = upper('"+ updTableColumnValue +"') where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_notification_types set active_record_indicator = upper('"+ updTableColumnValue +"') where notification_type_code = "+ updTablePrimaryKey;
 
                         } 
                                             
@@ -739,40 +661,27 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             
             try {
                 
-                insert = "insert into po_job_run_control.po_job_inst_contexts (job_id, instance_id, context_name, context_value, created_by) values(?, ?, ?, ?, ?);";
+                insert = "insert into po_job_run_control.po_notification_types (notification_type_code, notification_description, created_by, active_record_indicator, creation_datetime) values(?, ?, ?, 'A', now());";
                 ps = dbConn.prepareStatement(insert);
                 
-                //job_id
+                //notification_type_code
                     if (rowData[0] != null){ 
-                        ps.setInt(1, Integer.parseInt((String)rowData[0]));
+                        ps.setString(1, (String)rowData[0]);
                     } else {
-                        ps.setNull(1, Types.INTEGER);
+                        ps.setNull(1, Types.VARCHAR);
                     }
-                //instance_id
+                //notification_description
                     if (rowData[1] != null){ 
-                        ps.setInt(2, Integer.parseInt((String)rowData[1]));
+                        ps.setString(2, (String)rowData[1]);
                     } else {
-                        ps.setNull(2, Types.INTEGER);
+                        ps.setNull(2, Types.VARCHAR);
                     }
-                //context_name
+                //created_by
                     if (rowData[2] != null){ 
                         ps.setString(3, (String)rowData[2]);
                     } else {
                         ps.setNull(3, Types.VARCHAR);
-                    }
-                //context_value
-                    if (rowData[3] != null){ 
-                        ps.setString(4, (String)rowData[3]);
-                    } else {
-                        ps.setNull(4, Types.VARCHAR);
-                    }
-                //created_by
-                    if (rowData[4] != null){ 
-                        ps.setString(5, (String)rowData[4]);
-                    } else {
-                        ps.setNull(5, Types.VARCHAR);
-                    }
-              
+                    }              
 
             executer(ps);
             
@@ -794,20 +703,20 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotifTypesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotifTypesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotifTypesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotifTypesFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JobInstContextsFrameTbl().setVisible(true);
+                new NotifTypesFrameTbl().setVisible(true);
             }
         });
         
@@ -817,23 +726,19 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
     private javax.swing.JTextField activeIndicatortxt;
     private javax.swing.JButton backBtn;
     private javax.swing.JButton clearBtn;
-    private javax.swing.JTextField contextNametxt;
-    private javax.swing.JTextField contextValuetxt;
     private javax.swing.JLabel envCopylbl;
-    private javax.swing.JTextField instanceIdtxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jobIdtxt;
     private javax.swing.JTable jobInserttbl;
     private javax.swing.JTable jobUpdatetbl;
+    private javax.swing.JTextField notifTypeCodeTxt;
     private javax.swing.JButton runBtn;
     private javax.swing.JButton searchDatabtn;
     // End of variables declaration//GEN-END:variables

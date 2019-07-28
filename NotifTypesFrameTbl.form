@@ -36,7 +36,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="backBtn" min="-2" pref="150" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="697" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="671" max="-2" attributes="0"/>
                               <Component id="clearBtn" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -48,14 +48,18 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="recordInsertOpIdtxt" max="32767" attributes="0"/>
-                                  <Component id="instanceIdtxt" pref="200" max="32767" attributes="0"/>
+                                  <Component id="jobIdtxt" max="32767" attributes="0"/>
+                                  <Component id="notifTypeCodeTxt" pref="200" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel9" min="-2" pref="129" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="activeIndicatortxt" min="-2" pref="200" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="searchDatabtn" min="-2" pref="167" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="170" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="196" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="envCopylbl" min="-2" max="-2" attributes="0"/>
@@ -77,13 +81,15 @@
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="instanceIdtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="notifTypeCodeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="recordInsertOpIdtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jobIdtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="activeIndicatortxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="searchDatabtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
@@ -116,15 +122,21 @@
         <Component class="javax.swing.JTable" name="jobUpdatetbl">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="100">
-                <Column editable="false" title="Run Id" type="java.lang.Integer"/>
-                <Column editable="true" title="Instance Id" type="java.lang.Object"/>
-                <Column editable="true" title="Record Insert Operation Id" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="100">
+                <Column editable="false" title="Notification Type Code" type="java.lang.Integer"/>
+                <Column editable="true" title="Notification Description" type="java.lang.Object"/>
+                <Column editable="true" title="Creator" type="java.lang.Object"/>
+                <Column editable="true" title="Active Indicator" type="java.lang.Object"/>
                 <Column editable="true" title="Creation Time" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -175,20 +187,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="runBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="instanceIdtxt">
+    <Component class="javax.swing.JTextField" name="notifTypeCodeTxt">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="instanceIdtxtActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="notifTypeCodeTxtActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Instance Id:"/>
+        <Property name="text" type="java.lang.String" value="Notification Type Code"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Run Control"/>
+        <Property name="text" type="java.lang.String" value="Notification Types"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -201,13 +213,19 @@
         <Component class="javax.swing.JTable" name="jobInserttbl">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="100">
-                <Column editable="true" title="Instance Id" type="java.lang.Object"/>
-                <Column editable="true" title="Record Insert Operation Id" type="java.lang.Object"/>
+              <Table columnCount="3" rowCount="100">
+                <Column editable="true" title="Notification Type Code" type="java.lang.Object"/>
+                <Column editable="true" title="Notification Description" type="java.lang.Object"/>
+                <Column editable="true" title="Creator" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -239,10 +257,20 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Record Insert Operation Id:"/>
+        <Property name="text" type="java.lang.String" value="Notification Description:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="recordInsertOpIdtxt">
+    <Component class="javax.swing.JTextField" name="jobIdtxt">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Active Indicator:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="activeIndicatortxt">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="activeIndicatortxtActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="searchDatabtn">
       <Properties>
