@@ -2,7 +2,6 @@ package Framework_Gui;
 
 
 import java.sql.*;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -39,7 +38,7 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
         jobUpdatetbl = new javax.swing.JTable();
         envCopylbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        runBtn = new javax.swing.JButton();
+        runInsertBtn = new javax.swing.JButton();
         instanceIdtxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -51,6 +50,7 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
         recordInsertOpIdtxt = new javax.swing.JTextField();
         searchDatabtn = new javax.swing.JButton();
         clearBtn = new javax.swing.JButton();
+        runUpdateBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -188,10 +188,10 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
             }
         });
 
-        runBtn.setText("Run");
-        runBtn.addActionListener(new java.awt.event.ActionListener() {
+        runInsertBtn.setText("Insert");
+        runInsertBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                runBtnActionPerformed(evt);
+                runInsertBtnActionPerformed(evt);
             }
         });
 
@@ -336,6 +336,13 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
             }
         });
 
+        runUpdateBtn.setText("Update");
+        runUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runUpdateBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -368,7 +375,9 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(runInsertBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(runUpdateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -390,15 +399,17 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(runUpdateBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
-                    .addComponent(runBtn)
+                    .addComponent(runInsertBtn)
                     .addComponent(clearBtn))
                 .addContainerGap())
         );
@@ -413,19 +424,10 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
         dispose();       
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void runBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runBtnActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to update and insert?", "WARNING",
+    private void runInsertBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runInsertBtnActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to insert?", "WARNING",
         JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                         
-            //Get the inserted values for search
-            String[] searchValues = getSearchValues();
-            
-            //Fetch data
-            ResultSet resultSet = fetch(searchValues[0], searchValues[1]);
-
-            //Update
-            update(resultSet);
-            
             //Insert
             insert();
 
@@ -436,7 +438,7 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
         } else { 
             ; //do nothing
         }    
-    }//GEN-LAST:event_runBtnActionPerformed
+    }//GEN-LAST:event_runInsertBtnActionPerformed
 
     private void searchDatabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchDatabtnActionPerformed
         search();      
@@ -462,6 +464,28 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
     private void instanceIdtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instanceIdtxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_instanceIdtxtActionPerformed
+
+    private void runUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runUpdateBtnActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "WARNING",
+        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                        
+            //Get the inserted values for search
+            String[] searchValues = getSearchValues();
+            
+            //Fetch data
+            ResultSet resultSet = fetch(searchValues[0], searchValues[1]);
+
+            //Update
+            update(resultSet);
+
+            //Run Search again to show newly inserted, updated values
+            search();
+          
+        // NO_OPTION
+        } else { 
+            ; //do nothing
+        }    
+    }//GEN-LAST:event_runUpdateBtnActionPerformed
 
     public String[] getSearchValues() {      
         String[] searchValues = new String[2];
@@ -617,7 +641,6 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
         for (int insrtRowIdx = 0;  insrtRowIdx < insrtRowsNumber; insrtRowIdx++) {
             for (int insrtColIdx = 0; insrtColIdx < insrtColumnsNumber; insrtColIdx++) {
                 rowData[insrtColIdx] = jobInserttbl.getValueAt(insrtRowIdx, insrtColIdx);
-                System.out.println(Arrays.toString(rowData));
             }
             
             try {
@@ -690,7 +713,8 @@ public class RunControlFrameTbl extends javax.swing.JFrame {
     private javax.swing.JTable jobInserttbl;
     private javax.swing.JTable jobUpdatetbl;
     private javax.swing.JTextField recordInsertOpIdtxt;
-    private javax.swing.JButton runBtn;
+    private javax.swing.JButton runInsertBtn;
+    private javax.swing.JButton runUpdateBtn;
     private javax.swing.JButton searchDatabtn;
     // End of variables declaration//GEN-END:variables
 

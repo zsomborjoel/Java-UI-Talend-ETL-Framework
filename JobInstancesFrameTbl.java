@@ -2,7 +2,6 @@ package Framework_Gui;
 
 
 import java.sql.*;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -39,7 +38,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         jobUpdatetbl = new javax.swing.JTable();
         envCopylbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        runBtn = new javax.swing.JButton();
+        runInsertBtn = new javax.swing.JButton();
         priorityTxt = new javax.swing.JTextField();
         messageTypetxt = new javax.swing.JTextField();
         jsonStageTbltxt = new javax.swing.JTextField();
@@ -59,6 +58,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         activeIndicatortxt = new javax.swing.JTextField();
         searchDatabtn = new javax.swing.JButton();
         clearBtn = new javax.swing.JButton();
+        runUpdateBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,10 +196,10 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
             }
         });
 
-        runBtn.setText("Run");
-        runBtn.addActionListener(new java.awt.event.ActionListener() {
+        runInsertBtn.setText("Insert");
+        runInsertBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                runBtnActionPerformed(evt);
+                runInsertBtnActionPerformed(evt);
             }
         });
 
@@ -364,6 +364,13 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
             }
         });
 
+        runUpdateBtn.setText("Update");
+        runUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runUpdateBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -373,17 +380,8 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(118, 118, 118))
-                            .addComponent(jLabel5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -416,7 +414,17 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(runUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(runInsertBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -446,15 +454,17 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(runUpdateBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
-                    .addComponent(runBtn)
+                    .addComponent(runInsertBtn)
                     .addComponent(clearBtn))
                 .addContainerGap())
         );
@@ -469,18 +479,9 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         dispose();       
     }//GEN-LAST:event_backBtnActionPerformed
 
-    private void runBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runBtnActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to update and insert?", "WARNING",
+    private void runInsertBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runInsertBtnActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to insert?", "WARNING",
         JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                        
-            //Get the inserted values for search
-            String[] searchValues = getSearchValues();
-            
-            //Fetch data
-            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4], searchValues[5]);
-
-            //Update
-            update(resultSet);
             
             //Insert
             insert();
@@ -492,7 +493,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         } else { 
             ; //do nothing
         }    
-    }//GEN-LAST:event_runBtnActionPerformed
+    }//GEN-LAST:event_runInsertBtnActionPerformed
 
     private void searchDatabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchDatabtnActionPerformed
         search();      
@@ -526,6 +527,28 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
     private void priorityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_priorityTxtActionPerformed
+
+    private void runUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runUpdateBtnActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure you want to update?", "WARNING",
+        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                        
+            //Get the inserted values for search
+            String[] searchValues = getSearchValues();
+            
+            //Fetch data
+            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4], searchValues[5]);
+
+            //Update
+            update(resultSet);
+
+            //Run Search again to show newly inserted, updated values
+            search();
+          
+        // NO_OPTION
+        } else { 
+            ; //do nothing
+        } 
+    }//GEN-LAST:event_runUpdateBtnActionPerformed
 
     public String[] getSearchValues() {      
         String[] searchValues = new String[6];
@@ -749,7 +772,6 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
         for (int insrtRowIdx = 0;  insrtRowIdx < insrtRowsNumber; insrtRowIdx++) {
             for (int insrtColIdx = 0; insrtColIdx < insrtColumnsNumber; insrtColIdx++) {
                 rowData[insrtColIdx] = jobInserttbl.getValueAt(insrtRowIdx, insrtColIdx);
-                System.out.println(Arrays.toString(rowData));
             }
             
             try {
@@ -856,7 +878,8 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
     private javax.swing.JTextField jsonStageTbltxt;
     private javax.swing.JTextField messageTypetxt;
     private javax.swing.JTextField priorityTxt;
-    private javax.swing.JButton runBtn;
+    private javax.swing.JButton runInsertBtn;
+    private javax.swing.JButton runUpdateBtn;
     private javax.swing.JButton searchDatabtn;
     private javax.swing.JTextField stageSchematxt;
     // End of variables declaration//GEN-END:variables
