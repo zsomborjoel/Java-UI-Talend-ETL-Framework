@@ -138,11 +138,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Priority Hierarchy"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priorityHierarchyBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="runControlBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Run Control"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="runControlBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="instNotBtn">
       <Properties>

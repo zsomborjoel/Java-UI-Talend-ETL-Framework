@@ -75,8 +75,18 @@ public class MainMenuFrame extends javax.swing.JFrame {
         });
 
         priorityHierarchyBtn.setText("Priority Hierarchy");
+        priorityHierarchyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priorityHierarchyBtnActionPerformed(evt);
+            }
+        });
 
         runControlBtn.setText("Run Control");
+        runControlBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                runControlBtnActionPerformed(evt);
+            }
+        });
 
         instNotBtn.setText("Instance Notifications");
         instNotBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -201,6 +211,24 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private void instDepBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instDepBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_instDepBtnActionPerformed
+
+    private void priorityHierarchyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityHierarchyBtnActionPerformed
+        PriorityHierarchyFrameTbl priorityHierarchy = new PriorityHierarchyFrameTbl();
+        priorityHierarchy.getParams(dbConn, env);
+        ResultSet resultSet = priorityHierarchy.fetch("", "", "");
+        priorityHierarchy.populate(resultSet);
+        priorityHierarchy.setVisible(true);    
+        dispose();
+    }//GEN-LAST:event_priorityHierarchyBtnActionPerformed
+
+    private void runControlBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runControlBtnActionPerformed
+        JobInstContextsFrameTbl contexts = new JobInstContextsFrameTbl();
+        contexts.getParams(dbConn, env);
+        ResultSet resultSet = contexts.fetch("", "", "", "", "");
+        contexts.populate(resultSet);
+        contexts.setVisible(true);    
+        dispose();
+    }//GEN-LAST:event_runControlBtnActionPerformed
 
 
     public static void main(String args[]) {
