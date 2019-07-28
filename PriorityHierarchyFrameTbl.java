@@ -518,7 +518,7 @@ public class PriorityHierarchyFrameTbl extends javax.swing.JFrame {
             // Length 4 is equal to '%%'
             if (instanceId.length() > 4) {
                 
-                if (instanceId.equals("'%null%'")) {
+                if (instanceId.equals("  null  ")) {
                     query = query + " and instance_id is null ";
                 } else {
                     query = query + " and instance_id = " + instanceId + " ";
@@ -528,7 +528,7 @@ public class PriorityHierarchyFrameTbl extends javax.swing.JFrame {
             
             if (hierarchyLevel.length() > 4) {
                 
-                if (hierarchyLevel.equals("'%null%'")) {
+                if (hierarchyLevel.equals("  null  ")) {
                     query = query + " and hierarchy_level is null ";
                 } else {
                     query = query + " and hierarchy_level = " + hierarchyLevel + " ";

@@ -2,6 +2,7 @@ package Framework_Gui;
 
 
 import java.sql.*;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -169,7 +170,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, true, true, true, true, true, true, true, true, true, true, true
@@ -213,7 +214,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
 
         jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, "", null, null},
+                {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -504,12 +505,12 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         String[] searchValues = new String[6];
         
         //Created for like statement in sql and to make diff between java null and sql null
-        String jobName =            "'%" + jobNametxt.getText().toLowerCase()           + "%'";
-        String sourceType =         "'%" + sourceTypetxt.getText().toLowerCase()        + "%'";
-        String targetTable =        "'%" + targetTabletxt.getText().toLowerCase()       + "%'";
-        String jobType =            "'%" + jobTypetxt.getText().toLowerCase()           + "%'";
-        String sourceName =         "'%" + sourceNametxt.getText().toLowerCase()        + "%'";
-        String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
+        String jobName =            "'%" + jobNametxt.getText().trim().toLowerCase()           + "%'";
+        String sourceType =         "'%" + sourceTypetxt.getText().trim().toLowerCase()        + "%'";
+        String targetTable =        "'%" + targetTabletxt.getText().trim().toLowerCase()       + "%'";
+        String jobType =            "'%" + jobTypetxt.getText().trim().toLowerCase()           + "%'";
+        String sourceName =         "'%" + sourceNametxt.getText().trim().toLowerCase()        + "%'";
+        String activeIndicator =    "'%" + activeIndicatortxt.getText().trim().toLowerCase()   + "%'";
         
         searchValues[0] = jobName;
         searchValues[1] = sourceType;
@@ -533,7 +534,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     public ResultSet fetch(String jobName, String sourceType, String targetTable, String jobType, String sourceName, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", coalesce(cast(logging_control_by_job as varchar(10)), 'null') AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
+            String query="select job_id AS \"Job Id\", coalesce(job_name, 'null') AS \"Job Name\", coalesce(job_type, 'null') AS \"Job Type\", coalesce(source_type, 'null') AS \"Source Type\", coalesce(source_name, 'null') AS \"Source Name\", coalesce(description, 'null') AS \"Description\", coalesce(cast(expected_run_time as varchar(20)), 'null') AS \"Runtime\", coalesce(main_target_table, 'null') AS \"Target Table\", logging_control_by_job AS \"Logging\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_jobs where 1=1";
 
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
@@ -619,7 +620,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     public void executer(PreparedStatement ps) {      
         try{           
             ps.execute();
-        } catch (SQLException e) {
+        } catch (NullPointerException|SQLException e) {
             JOptionPane.showMessageDialog(null, "During Insert/Update --> " + e);
         }       
     }
@@ -655,6 +656,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         updRowIdx++;
                     }
 
+                    System.out.println("update: " + rsColumnValue + " | " + updTableColumn + " "  +  updTableColumnValue);
+                    
                     // Update the rewritten data in the database based on primary key
                     if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)) {
                         
@@ -684,11 +687,11 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                         
                         } else if (updTableColumn.equals("Target Table")) {
                             
-                            update = "update po_job_run_control.po_jobs set main_target_table = '"+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set main_target_table = '"+ updTableColumnValue +"' where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Logging")) {
                             
-                            update = "update po_job_run_control.po_jobs set logging_control_by_job = '"+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_jobs set logging_control_by_job = "+ updTableColumnValue +" where job_id = "+ updTablePrimaryKey;
                         
                         } else if (updTableColumn.equals("Creator")) {
                              
@@ -710,7 +713,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                  
             }
             
-        } catch (SQLException e) {
+        } catch (NullPointerException|SQLException e) {
             JOptionPane.showMessageDialog(null, "In Update table --> " + e);
         }      
     }
@@ -734,6 +737,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
         for (int insrtRowIdx = 0;  insrtRowIdx < insrtRowsNumber; insrtRowIdx++) {
             for (int insrtColIdx = 0; insrtColIdx < insrtColumnsNumber; insrtColIdx++) {
                 rowData[insrtColIdx] = jobInserttbl.getValueAt(insrtRowIdx, insrtColIdx);
+                System.out.println(Arrays.toString(rowData));
             }
             
             try {
@@ -785,9 +789,9 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     }
                 //logging_control_by_job
                     if (rowData[7] != null){ 
-                        ps.setBoolean(8, (Boolean)rowData[7]);
+                        ps.setBoolean(8, Boolean.parseBoolean((String)rowData[7]));
                     } else {
-                        ps.setNull(8, Types.BOOLEAN);
+                        ps.setBoolean(8, Boolean.parseBoolean((String)"true"));
                     }
                 //created_by
                     if (rowData[8] != null){ 
@@ -800,7 +804,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             
            
             
-            } catch (ClassCastException|SQLException e) {
+            } catch (NullPointerException|ClassCastException|SQLException e) {
                 JOptionPane.showMessageDialog(null, "In Insert table --> " + e);
             } 
             

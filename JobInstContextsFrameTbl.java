@@ -565,7 +565,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             // Length 4 is equal to '%%'
             if (instanceId.length() > 4) {
                 
-                if (instanceId.equals("'%null%'")) {
+                if (instanceId.equals("  null  ")) {
                     query = query + " and instance_id is null ";
                 } else {
                     query = query + " and instance_id = " + instanceId + " ";
@@ -575,7 +575,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             
             if (jobId.length() > 4) {
                 
-                if (jobId.equals("'%null%'")) {
+                if (jobId.equals("  null  ")) {
                     query = query + " and job_id is null ";
                 } else {
                     query = query + " and job_id = " + jobId + " ";

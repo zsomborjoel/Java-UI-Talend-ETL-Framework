@@ -222,11 +222,11 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_priorityHierarchyBtnActionPerformed
 
     private void runControlBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runControlBtnActionPerformed
-        JobInstContextsFrameTbl contexts = new JobInstContextsFrameTbl();
-        contexts.getParams(dbConn, env);
-        ResultSet resultSet = contexts.fetch("", "", "", "", "");
-        contexts.populate(resultSet);
-        contexts.setVisible(true);    
+        RunControlFrameTbl runControl = new RunControlFrameTbl();
+        runControl.getParams(dbConn, env);
+        ResultSet resultSet = runControl.fetch("", "");
+        runControl.populate(resultSet);
+        runControl.setVisible(true);    
         dispose();
     }//GEN-LAST:event_runControlBtnActionPerformed
 

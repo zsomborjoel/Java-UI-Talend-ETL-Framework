@@ -560,15 +560,13 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
     public ResultSet fetch(String priority, String jobId, String messageType, String stageSchema, String jsonStageTbl, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select instance_id AS \"Instance Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(message_type, 'null') AS \"Message Type\", coalesce(stage_schema, 'null') AS \"Stage Schema\", coalesce(json_stage_table, 'null') AS \"Json Stage Table\", coalesce(cast(priority as varchar(20))) AS \"Priority\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_instances where 1=1";
-
-            
-            
+            String query="select instance_id AS \"Instance Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(message_type, 'null') AS \"Message Type\", coalesce(stage_schema, 'null') AS \"Stage Schema\", coalesce(json_stage_table, 'null') AS \"Json Stage Table\", coalesce(cast(priority as varchar(20)), 'null') AS \"Priority\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_instances where 1=1";
+           
             // Decide if need to add a is null statement for the query or a like statment at the end
             // Length 4 is equal to '%%'
             if (priority.length() > 4) {
                 
-                if (priority.equals("'%null%'")) {
+                if (priority.equals("  null  ")) {
                     query = query + " and priority is null ";
                 } else {
                     query = query + " and priority = " + priority + " ";
@@ -578,7 +576,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
             
             if (jobId.length() > 4) {
                 
-                if (jobId.equals("'%null%'")) {
+                if (jobId.equals("  null  ")) {
                     query = query + " and job_id is null ";
                 } else {
                     query = query + " and job_id = " + jobId + " ";
