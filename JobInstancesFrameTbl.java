@@ -382,7 +382,7 @@ public class JobInstancesFrameTbl extends javax.swing.JFrame {
                                 .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(158, 158, 158))
+                                .addGap(118, 118, 118))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()

@@ -36,35 +36,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="backBtn" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="envCopylbl" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jobsBtn" alignment="0" pref="340" max="32767" attributes="0"/>
-                          <Component id="instancesBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="instConBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="instDepBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="priorityHierarchyBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="runControlBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="instNotBtn" pref="340" max="32767" attributes="0"/>
-                          <Component id="instConOverBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="notifTypesBtn" max="32767" attributes="0"/>
-                      </Group>
+                  <Component id="backBtn" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="envCopylbl" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="393" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="130" max="32767" attributes="0"/>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jobsBtn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="instancesBtn" max="32767" attributes="0"/>
+                  <Component id="instConBtn" max="32767" attributes="0"/>
+                  <Component id="instDepBtn" max="32767" attributes="0"/>
+                  <Component id="priorityHierarchyBtn" max="32767" attributes="0"/>
+                  <Component id="runControlBtn" max="32767" attributes="0"/>
+                  <Component id="instNotBtn" max="32767" attributes="0"/>
+                  <Component id="instConOverBtn" alignment="0" max="32767" attributes="0"/>
+                  <Component id="notifTypesBtn" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,27 +73,27 @@
                   <Component id="envCopylbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jobsBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="priorityHierarchyBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="runControlBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="notifTypesBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="instancesBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="instDepBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="instConBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="instConOverBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="instNotBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jobsBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="priorityHierarchyBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="runControlBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="notifTypesBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="instancesBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="instDepBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="instConBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="instConOverBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="instNotBtn" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -173,6 +170,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
     </Component>
@@ -180,6 +178,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Instance Contexts Override"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="instConOverBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="notifTypesBtn">
       <Properties>

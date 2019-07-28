@@ -358,16 +358,8 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(158, 158, 158))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -402,7 +394,13 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(runBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -620,7 +618,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
     public void executer(PreparedStatement ps) {      
         try{           
             ps.execute();
-        } catch (NullPointerException|SQLException e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "During Insert/Update --> " + e);
         }       
     }
@@ -713,7 +711,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
                  
             }
             
-        } catch (NullPointerException|SQLException e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "In Update table --> " + e);
         }      
     }
@@ -804,7 +802,7 @@ public class JobsFrameTbl extends javax.swing.JFrame {
             
            
             
-            } catch (NullPointerException|ClassCastException|SQLException e) {
+            } catch (ClassCastException|SQLException e) {
                 JOptionPane.showMessageDialog(null, "In Insert table --> " + e);
             } 
             

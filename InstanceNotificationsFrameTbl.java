@@ -8,10 +8,10 @@ import net.proteanit.sql.DbUtils;
 
 
 
-public class JobInstContextsFrameTbl extends javax.swing.JFrame {
+public class InstanceNotificationsFrameTbl extends javax.swing.JFrame {
 
     //Creates new form JobsFrameTbl
-    public JobInstContextsFrameTbl() {
+    public InstanceNotificationsFrameTbl() {
         initComponents();
     }
     
@@ -41,17 +41,15 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         backBtn = new javax.swing.JButton();
         runBtn = new javax.swing.JButton();
         instanceIdtxt = new javax.swing.JTextField();
-        contextNametxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jobInserttbl = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jobIdtxt = new javax.swing.JTextField();
-        contextValuetxt = new javax.swing.JTextField();
+        notifTypeCodetxt = new javax.swing.JTextField();
+        notifAddresstxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         activeIndicatortxt = new javax.swing.JTextField();
@@ -62,116 +60,116 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
 
         jobUpdatetbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Context Id", "Job Id", "Instance Id", "Context Name", "Context Value", "Creator", "Active Indicator", "Creation Time"
+                "Instance Notification Id", "Instance Id", "Notification Type Code", "Notification Address", "Creator", "Active Indicator", "Creation Time", "Updater", "Update Time"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true
+                false, true, true, true, true, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -207,124 +205,116 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             }
         });
 
-        contextNametxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contextNametxtActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Instance Id:");
 
-        jLabel2.setText("Context Name:");
-
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Instance Contexts");
+        jLabel4.setText("Instance Notifications");
 
         jobInserttbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Job Id", "Instance Id", "Context Name", "Context Value", "Creator"
+                "Instance Id", "Notification Type Code", "Notification Address", "Creator"
             }
         ));
         jobInserttbl.getTableHeader().setReorderingAllowed(false);
@@ -334,15 +324,15 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
 
         jLabel6.setText("Update");
 
-        jLabel7.setText("Job Id:");
+        jLabel7.setText("Notification Type Code:");
 
-        contextValuetxt.addActionListener(new java.awt.event.ActionListener() {
+        notifAddresstxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contextValuetxtActionPerformed(evt);
+                notifAddresstxtActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("Context Value:");
+        jLabel8.setText("Notification Address:");
 
         jLabel9.setText("Active Indicator:");
 
@@ -384,7 +374,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                                 .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(144, 144, 144))
+                                .addGap(158, 158, 158))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
@@ -393,23 +383,19 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jobIdtxt)
+                                    .addComponent(notifTypeCodetxt)
                                     .addComponent(instanceIdtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contextNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(contextValuetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(notifAddresstxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(searchDatabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 12, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(envCopylbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -426,13 +412,11 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(instanceIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contextNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jobIdtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contextValuetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(notifTypeCodetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(notifAddresstxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(activeIndicatortxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
@@ -472,7 +456,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             String[] searchValues = getSearchValues();
             
             //Fetch data
-            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4]);
+            ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3]);
 
             //Update
             update(resultSet);
@@ -510,9 +494,9 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_clearBtnActionPerformed
 
-    private void contextValuetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contextValuetxtActionPerformed
+    private void notifAddresstxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notifAddresstxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_contextValuetxtActionPerformed
+    }//GEN-LAST:event_notifAddresstxtActionPerformed
 
     private void activeIndicatortxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activeIndicatortxtActionPerformed
         // TODO add your handling code here:
@@ -522,25 +506,19 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_instanceIdtxtActionPerformed
 
-    private void contextNametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contextNametxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contextNametxtActionPerformed
-
     public String[] getSearchValues() {      
-        String[] searchValues = new String[5];
+        String[] searchValues = new String[4];
         
         //Created for like statement in sql and to make diff between java null and sql null
         String instanceId =         "  " + instanceIdtxt.getText().toLowerCase()        + "  ";
-        String jobId =              "  " + jobIdtxt.getText().toLowerCase()             + "  ";
-        String contextName =        "'%" + contextNametxt.getText().toLowerCase()       + "%'";
-        String contextValue =       "'%" + contextValuetxt.getText().toLowerCase()      + "%'";
+        String notifTypeCode =      "'%" + notifTypeCodetxt.getText().toLowerCase()     + "%'";
+        String notifAddress =       "'%" + notifAddresstxt.getText().toLowerCase()      + "%'";
         String activeIndicator =    "'%" + activeIndicatortxt.getText().toLowerCase()   + "%'";
         
         searchValues[0] = instanceId;
-        searchValues[1] = jobId;
-        searchValues[2] = contextName;
-        searchValues[3] = contextValue;
-        searchValues[4] = activeIndicator;
+        searchValues[1] = notifTypeCode;
+        searchValues[2] = notifAddress;
+        searchValues[3] = activeIndicator;
         
         return searchValues;
     }
@@ -550,14 +528,14 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
         String[] searchValues = getSearchValues(); 
         
         //populates Update table
-        ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3], searchValues[4]);
+        ResultSet resultSet = fetch(searchValues[0], searchValues[1], searchValues[2], searchValues[3]);
         populate(resultSet);
     }
     
-    public ResultSet fetch(String instanceId, String jobId, String contextName, String contextValue, String activeIndicator) {          
+    public ResultSet fetch(String instanceId, String notifTypeCode, String notifAddress, String activeIndicator) {          
             ResultSet resultSet = null;  
             // Have to use coalesce to show null values in Jtable rather than empty values
-            String query="select context_id AS \"Context Id\", coalesce(cast(job_id as varchar(20)), 'null') AS \"Job Id\", coalesce(cast(instance_id as varchar(20)), 'null') AS \"Instance Id\",  coalesce(context_name, 'null') AS \"Context Name\", coalesce(context_value, 'null') AS \"Context Value\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_time as varchar(20)), 'null') as \"Creation Time\" from po_job_run_control.po_job_inst_contexts where 1=1";
+            String query="select po_instance_notification_id AS \"Instance Notification Id\", coalesce(cast(instance_id as varchar(20)), 'null') AS \"Instance Id\",  coalesce(notification_type_code, 'null') AS \"Notification Type Code\", coalesce(notification_address, 'null') AS \"Notification Address\", coalesce(created_by, 'null') AS \"Creator\", coalesce(active_record_indicator, 'null') AS \"Active Indicator\", coalesce(cast(creation_datetime as varchar(20)), 'null') as \"Creation Time\", coalesce(updated_by, 'null') AS \"Updater\", coalesce(cast(updatated_datetime as varchar(20)), 'null') as \"Update Time\" from po_job_run_control.po_instance_notifications where 1=1";
 
             
             
@@ -573,32 +551,22 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                 
             }  
             
-            if (jobId.length() > 4) {
+            if (notifTypeCode.length() > 4) {
                 
-                if (jobId.equals("  null  ")) {
-                    query = query + " and job_id is null ";
+                if (notifTypeCode.equals("'%null%'")) {
+                    query = query + " and notification_type_code is null ";
                 } else {
-                    query = query + " and job_id = " + jobId + " ";
+                    query = query + " and lower(notification_type_code) like " + notifTypeCode + " ";
                 }
 
             }
             
-            if (contextName.length() > 4) {
+            if (notifAddress.length() > 4) {
                 
-                if (contextName.equals("'%null%'")) {
-                    query = query + " and context_name is null ";
+                if (notifAddress.equals("'%null%'")) {
+                    query = query + " and notification_address is null ";
                 } else {
-                    query = query + " and lower(context_name) like " + contextName + " ";
-                }
-
-            } 
-            
-            if (contextValue.length() > 4) {
-                
-                if (contextValue.equals("'%null%'")) {
-                    query = query + " and context_value is null ";
-                } else {
-                    query = query + " and lower(context_value) like " + contextValue + " ";
+                    query = query + " and lower(notification_address) like " + notifAddress + " ";
                 }
 
             } 
@@ -613,7 +581,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
 
             }
             
-            query = query + " order by context_id desc limit 100;";
+            query = query + " order by po_instance_notification_id desc limit 100;";
         
         //Run query and put it into table    
         try {
@@ -649,7 +617,9 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             String rsColumnValue;
             String rsPrimaryKey;
             String update = null;
+            String updater = null;
             PreparedStatement ps = null;
+
 
             while (resultSet.next()) {
                 
@@ -667,6 +637,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                     
                     String updTableColumnValue = jobUpdatetbl.getModel().getValueAt(updRowIdx,updColIdx).toString();                    
                     String updTablePrimaryKey = jobUpdatetbl.getModel().getValueAt(updRowIdx,0).toString();
+                    String updaterValue = jobUpdatetbl.getModel().getValueAt(updRowIdx,7).toString();
                     if (rsColIdx == rsColumnsNumber){
                         updRowIdx++;
                     }
@@ -674,38 +645,54 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                     // Update the rewritten data in the database based on primary key
                     if (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue)) {
                         
-                        if (updTableColumn.equals("Job Id")) {
+                        if (updTableColumn.equals("Instance Id")) {
         
-                            update = "update po_job_run_control.po_job_inst_contexts set job_id = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_instance_notifications set instance_id = '"+ updTableColumnValue +"' where po_instance_notification_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Instance Id")) {
+                        } else if (updTableColumn.equals("Notification Type Code")) {
                             
-                            update = "update po_job_run_control.po_job_inst_contexts set instance_id = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_instance_notifications set notification_type_code = '"+ updTableColumnValue +"' where po_instance_notification_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Context Name")) {
+                        } else if (updTableColumn.equals("Notification Address")) {
                             
-                            update = "update po_job_run_control.po_job_inst_contexts set context_name = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_instance_notifications set notification_address = '"+ updTableColumnValue +"' where po_instance_notification_id = "+ updTablePrimaryKey;
                         
-                        } else if (updTableColumn.equals("Context Value")) {
-                            
-                            update = "update po_job_run_control.po_job_inst_contexts set context_value = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
-                       
                         } else if (updTableColumn.equals("Creator")) {
                              
-                            update = "update po_job_run_control.po_job_inst_contexts set created_by = '"+ updTableColumnValue +"' where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_instance_notifications set created_by = '"+ updTableColumnValue +"' where po_instance_notification_id = "+ updTablePrimaryKey;
                             
                         } else if (updTableColumn.equals("Active Indicator")) {
                             
-                            update = "update po_job_run_control.po_job_inst_contexts set active_record_indicator = upper('"+ updTableColumnValue +"') where context_id = "+ updTablePrimaryKey;
+                            update = "update po_job_run_control.po_instance_notifications set active_record_indicator = upper('"+ updTableColumnValue +"') where po_instance_notification_id = "+ updTablePrimaryKey;
 
+                        } else if (updTableColumn.equals("Updater")) {
+                     
+                            update = "update po_job_run_control.po_instance_notifications set updated_by = '"+ updTableColumnValue +"', updatated_datetime = now() where po_instance_notification_id = "+ updTablePrimaryKey;
+                        
                         } 
-                                            
+                        
                         //Execute update
                         ps = dbConn.prepareStatement(update);
                         executer(ps);                        
+
+                    }
+                    
+                    //Handle null value in updater field in case of other value update
+                    if ((updaterValue.equals("null") | updaterValue == null) && (rsPrimaryKey.equals(updTablePrimaryKey) && !rsColumnValue.equals(updTableColumnValue))) {
+                        
+                        updater = "update po_job_run_control.po_instance_notifications set updated_by = current_user , updatated_datetime = now() where po_instance_notification_id = "+ updTablePrimaryKey;
+                            
+                    }
+                    
+                    try{
+                        
+                        ps = dbConn.prepareStatement(updater);
+                        executer(ps);        
+                        
+                    } catch (NullPointerException e){
                         
                     }
-                                 
+                
                 }
                  
             }
@@ -739,7 +726,7 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
             
             try {
                 
-                insert = "insert into po_job_run_control.po_job_inst_contexts (job_id, instance_id, context_name, context_value, created_by) values(?, ?, ?, ?, ?);";
+                insert = "insert into po_job_run_control.po_instance_notifications (instance_id, notification_type_code, notification_address, created_by, active_record_indicator) values(?, ?, ?, ?, 'A');";
                 ps = dbConn.prepareStatement(insert);
                 
                 //job_id
@@ -748,29 +735,23 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                     } else {
                         ps.setNull(1, Types.INTEGER);
                     }
-                //instance_id
+                //notification_type_code
                     if (rowData[1] != null){ 
-                        ps.setInt(2, Integer.parseInt((String)rowData[1]));
+                        ps.setString(2, (String)rowData[1]);
                     } else {
-                        ps.setNull(2, Types.INTEGER);
+                        ps.setNull(2, Types.VARCHAR);
                     }
-                //context_name
+                //notification_address
                     if (rowData[2] != null){ 
                         ps.setString(3, (String)rowData[2]);
                     } else {
                         ps.setNull(3, Types.VARCHAR);
                     }
-                //context_value
+                //created_by
                     if (rowData[3] != null){ 
                         ps.setString(4, (String)rowData[3]);
                     } else {
                         ps.setNull(4, Types.VARCHAR);
-                    }
-                //created_by
-                    if (rowData[4] != null){ 
-                        ps.setString(5, (String)rowData[4]);
-                    } else {
-                        ps.setNull(5, Types.VARCHAR);
                     }
               
 
@@ -794,20 +775,20 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstanceNotificationsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstanceNotificationsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstanceNotificationsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JobInstContextsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstanceNotificationsFrameTbl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JobInstContextsFrameTbl().setVisible(true);
+                new InstanceNotificationsFrameTbl().setVisible(true);
             }
         });
         
@@ -817,12 +798,9 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
     private javax.swing.JTextField activeIndicatortxt;
     private javax.swing.JButton backBtn;
     private javax.swing.JButton clearBtn;
-    private javax.swing.JTextField contextNametxt;
-    private javax.swing.JTextField contextValuetxt;
     private javax.swing.JLabel envCopylbl;
     private javax.swing.JTextField instanceIdtxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -831,9 +809,10 @@ public class JobInstContextsFrameTbl extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jobIdtxt;
     private javax.swing.JTable jobInserttbl;
     private javax.swing.JTable jobUpdatetbl;
+    private javax.swing.JTextField notifAddresstxt;
+    private javax.swing.JTextField notifTypeCodetxt;
     private javax.swing.JButton runBtn;
     private javax.swing.JButton searchDatabtn;
     // End of variables declaration//GEN-END:variables
